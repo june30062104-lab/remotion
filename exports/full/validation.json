@@ -1,0 +1,29 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration_seconds": 2240.38,
+  "timeline_frame_count": 67211,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "chapter_count": 9,
+  "shot_count": 246,
+  "srt_cue_count": 602,
+  "transition_sfx_events": 245,
+  "independent_image_count": 58,
+  "native_image_sizes": [
+    [
+      1672,
+      941
+    ]
+  ],
+  "full_decode_exit_code": 0,
+  "full_decode_errors": "",
+  "all_shot_frame_counts_checked": true,
+  "audio_integrated_lufs": -16.2,
+  "audio_true_peak_dbfs": -1.2,
+  "video_bytes": 507997592,
+  "video_sha256": "3c415f2e2b68ff6b68b4d9723bff2bdd1cae4366f2d758e845149e343bb976a2",
+  "remotion_still_test": "passed",
+  "review_scope": "Representative frames and transition samples; no full listening/transcription or independent factual verification."
+}

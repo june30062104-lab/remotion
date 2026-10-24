@@ -1,1 +1,94 @@
-{"status":"building","tag":"nhung-lua-chon-nho-full-v1","artifacts":[]}
+{
+  "status": "ready",
+  "tag": "nhung-lua-chon-nho-full-v1",
+  "artifacts": [
+    {
+      "name": "nhung-lua-chon-nho-full-1080p.mp4",
+      "bytes": 507997592,
+      "sha256": "3c415f2e2b68ff6b68b4d9723bff2bdd1cae4366f2d758e845149e343bb976a2",
+      "parts": [
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part001.bin",
+          "sha256": "cc353b5a8534b009f8569d2af137f5f5aef50c06c5e05720a75b7f8e600b806f",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part002.bin",
+          "sha256": "c70f417f0ae4ecba9cf7d9589e60bf8766d3998eeeacc5e8e3236cd31e3d996d",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part003.bin",
+          "sha256": "2ec863b732008ad5befc57115c841b20e87e659709dfa3b61c4caa0dfee5def1",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part004.bin",
+          "sha256": "368983b5c87b4f7896798734d4352e2c2acb46331ba7a3b53c714292516d731c",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part005.bin",
+          "sha256": "50f05026b80e6966e1b853c45b7ae2a41264697b7fe7d0a6fa01b12ab096ffa5",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part006.bin",
+          "sha256": "4d5ae0c987a70da937f2bf17ccd7058be4381ae7d76393912c693c515c82b8e7",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-full-1080p.mp4.part007.bin",
+          "sha256": "5e9bd28dcc45bc25e5d301e2725295edd8809548f451e8d0bacb4649bbf846e8",
+          "bytes": 4681112
+        }
+      ]
+    },
+    {
+      "name": "nhung-lua-chon-nho-remotion-source.zip",
+      "bytes": 226258742,
+      "sha256": "9fb8282d039ef2d6aa5a63da6958f42035e34de4204988b73ad27d368ad54d30",
+      "parts": [
+        {
+          "file": "chunks/nhung-lua-chon-nho-remotion-source.zip.part001.bin",
+          "sha256": "0c830f37597d022564612d6b853d8383e6f533c1d8d727d02c6ad360c2e2eacd",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-remotion-source.zip.part002.bin",
+          "sha256": "6f34372110c498ce296b8a57975a1bb483bb4ca6bfb6fbcb878365df7f6ad0df",
+          "bytes": 83886080
+        },
+        {
+          "file": "chunks/nhung-lua-chon-nho-remotion-source.zip.part003.bin",
+          "sha256": "718c3e547ce0ca572f7b148518a5807194950700c94f380f3612da30d371db1d",
+          "bytes": 58486582
+        }
+      ]
+    },
+    {
+      "name": "nhung-lua-chon-nho.vi.srt",
+      "bytes": 79229,
+      "sha256": "92af17b983120832672a310d2df3fd562efedd40bfef5c00cf455978b7c301ab",
+      "parts": [
+        {
+          "file": "chunks/nhung-lua-chon-nho.vi.srt.part001.bin",
+          "sha256": "92af17b983120832672a310d2df3fd562efedd40bfef5c00cf455978b7c301ab",
+          "bytes": 79229
+        }
+      ]
+    },
+    {
+      "name": "preview-35s.mp4",
+      "bytes": 9977328,
+      "sha256": "75aab28c28127f9ecf90277c9c496b3b928e8faffa6b7838091279223b25e422",
+      "parts": [
+        {
+          "file": "chunks/preview-35s.mp4.part001.bin",
+          "sha256": "75aab28c28127f9ecf90277c9c496b3b928e8faffa6b7838091279223b25e422",
+          "bytes": 9977328
+        }
+      ]
+    }
+  ]
+}
