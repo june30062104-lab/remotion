@@ -1,0 +1,69 @@
+name: Publish full narrated video
+on:
+  push:
+    branches: [video-full/nhung-lua-chon-nho]
+    paths:
+      - exports/full/READY.json
+      - .github/workflows/publish-full-video.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-full-narrated-video
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check whether verified exports are ready
+        id: state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          data = json.load(open('exports/full/READY.json'))
+          ready = data.get('status') == 'ready'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'ready={str(ready).lower()}\n')
+          print('Exports ready:', ready)
+          PY
+      - name: Verify, assemble and publish downloadable files
+        if: steps.state.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib, subprocess, os
+          root = pathlib.Path('exports/full').resolve()
+          data = json.load(open(root / 'READY.json'))
+          outputs = []
+          for asset in data['artifacts']:
+              name = asset['name']
+              assert pathlib.Path(name).name == name
+              dest = pathlib.Path(os.environ['RUNNER_TEMP']) / name
+              digest = hashlib.sha256()
+              with dest.open('wb') as out:
+                  for part in asset['parts']:
+                      src = (root / part['file']).resolve()
+                      assert src.is_relative_to(root)
+                      h = hashlib.sha256()
+                      with src.open('rb') as inp:
+                          while chunk := inp.read(4 * 1024 * 1024):
+                              h.update(chunk)
+                              digest.update(chunk)
+                              out.write(chunk)
+                      assert h.hexdigest() == part['sha256'], src.name
+              assert digest.hexdigest() == asset['sha256'], name
+              outputs.append(str(dest))
+              print('Verified:', name, dest.stat().st_size)
+          tag = data['tag']
+          exists = subprocess.run(['gh', 'release', 'view', tag], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0
+          if not exists:
+              subprocess.run(['gh', 'release', 'create', tag, '--target', os.environ['GITHUB_SHA'], '--title', 'Những lựa chọn nhỏ — video đầy đủ', '--notes-file', str(root/'RELEASE_NOTES.md')], check=True)
+          subprocess.run(['gh', 'release', 'upload', tag, *outputs, '--clobber'], check=True)
+          PY
