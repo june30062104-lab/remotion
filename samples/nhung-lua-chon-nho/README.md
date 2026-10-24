@@ -1,5 +1,7 @@
 # Những lựa chọn nhỏ — video mẫu
 
+**Đã có [PHẦN 02 — 63 giây tiếp theo, có voice](./part-02/README.md).** Nối từ 01:02,3 đến 02:05,3 của lời thoại gốc.
+
 ## Bản mới: có voice và hình hoạt hình màu
 
 62,3 giây · 1920×1080 · 30 fps · H.264 + AAC.
