@@ -1,0 +1,41 @@
+name: Publish Last Two People animated video
+on:
+  push:
+    branches: [video/last-two-people]
+    paths: [exports/last-two-people/READY.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          sparse-checkout: exports/last-two-people
+      - name: Verify and publish deliverables
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json,pathlib,hashlib,subprocess,os
+          p=pathlib.Path('exports/last-two-people')
+          data=json.loads((p/'READY.json').read_text())
+          assert data['status']=='ready'
+          outputs=[]
+          for item in data['assets']:
+              assert pathlib.Path(item['name']).name==item['name']
+              f=p/item['name']
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==item['sha256']
+              outputs.append(str(f))
+          validation=json.loads((p/'validation.json').read_text())
+          assert validation['status']=='passed' and validation['full_decode']=='passed'
+          tag='last-two-people-v1'
+          exists=subprocess.run(['gh','release','view',tag],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0
+          if not exists:
+              subprocess.run(['gh','release','create',tag,'--target',os.environ['GITHUB_SHA'],'--title','Nếu chỉ còn hai người — hoạt hình 2D','--notes-file',str(p/'RELEASE_NOTES.md')],check=True)
+          subprocess.run(['gh','release','upload',tag,*outputs,'--clobber'],check=True)
+          PY
