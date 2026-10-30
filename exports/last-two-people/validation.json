@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "duration": 66.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": "24/1",
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "full_decode": "passed",
+  "bytes": 39650517,
+  "frames": 1584,
+  "shots": 23,
+  "script_lines": 17,
+  "voice": "Microsoft Edge TTS, Vietnamese NamMinh and HoaiMy",
+  "sfx_cues": 23,
+  "source_zip_integrity": "passed",
+  "script_boundary_text_match": "passed"
+}

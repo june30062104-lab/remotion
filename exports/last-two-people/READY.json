@@ -1,0 +1,40 @@
+{
+  "status": "ready",
+  "assets": [
+    {
+      "name": "last-two-people-1080p.mp4",
+      "sha256": "106f44f7ecd4086b318105ec5b64d4437f6122335d68c3b5565b462703dc6f33",
+      "bytes": 39650517
+    },
+    {
+      "name": "last-two-people-codex-source.zip",
+      "sha256": "ac4e1ce6df26b2a7445268ca470e5035a3c2e935e1f8ee5f1a6af0aac13fd9dc",
+      "bytes": 8664411
+    },
+    {
+      "name": "last-two-people.vi.srt",
+      "sha256": "ef6a62998a7ec928d36d1ef695034e6b7415b04f8c61d2a087f811d016067e81",
+      "bytes": 1482
+    },
+    {
+      "name": "storyboard.png",
+      "sha256": "0065543d9d5fc2787a307868e501c4bd2ca5c5ca2bc7a9a69a0657a0c67c021b",
+      "bytes": 2006674
+    },
+    {
+      "name": "preview-6s.mp4",
+      "sha256": "0e0b7f88f4158820edff699b1f7d5e4451f46f8e084de8297008859ebc89d350",
+      "bytes": 1071613
+    },
+    {
+      "name": "validation.json",
+      "sha256": "54c1e2e1f05468047e0d152c15a934ec833246f5a2cf806f9bbedeb351ae65ac",
+      "bytes": 409
+    },
+    {
+      "name": "final-contact-sheet.jpg",
+      "sha256": "f605287bcba2a4ab528d9822f6193c737e04208a39d50b58da7e4a58507b97f5",
+      "bytes": 103555
+    }
+  ]
+}
