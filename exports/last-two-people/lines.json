@@ -1,0 +1,19 @@
+[
+{"text":"Bạn thức dậy vào một sáng thứ Hai và nhận ra có gì đó không ổn.","scene":"wake","speaker":"narrator","pause":0.4},
+{"text":"Không tiếng xe cộ.","scene":"street","speaker":"narrator","pause":0.35},
+{"text":"Không tiếng còi báo động.","scene":"alarm","speaker":"narrator","pause":0.35},
+{"text":"Ngay cả ông hàng xóm thường khoan tường lúc bảy giờ sáng cũng im bặt.","scene":"drill","speaker":"narrator","pause":0.5},
+{"text":"Chỉ sau một đêm, mọi người trên Trái Đất đều đã biến mất.","scene":"vanish","speaker":"narrator","pause":0.55},
+{"text":"À… gần như tất cả.","scene":"almost","speaker":"narrator","pause":0.7},
+{"text":"Khoan đã. Vậy là chỉ còn hai chúng ta thôi sao?","scene":"question","speaker":"a","pause":0.45},
+{"text":"Có vẻ vậy.","scene":"answer","speaker":"b","pause":0.5},
+{"text":"Tôi còn chưa biết tên anh.","scene":"names","speaker":"a","pause":0.65},
+{"text":"Và thế là toàn bộ tương lai của nhân loại đặt lên vai hai người xa lạ…","scene":"burden","speaker":"narrator","pause":0.1},
+{"text":"vừa gặp nhau cách đây khoảng bốn mươi giây.","scene":"forty","speaker":"narrator","pause":0.5},
+{"text":"Không áp lực chút nào.","scene":"pressure","speaker":"narrator","pause":0.65},
+{"text":"Vậy phải bắt đầu từ đâu?","scene":"begin","speaker":"narrator","pause":0.35},
+{"text":"Trước hết, hãy nhìn vào mục tiêu: đưa dân số từ hai người trở lại hơn tám tỷ.","scene":"population","speaker":"narrator","pause":0.55},
+{"text":"Tin tốt là con người có thể sinh nhiều con.","scene":"good","speaker":"narrator","pause":0.5},
+{"text":"Tin xấu là…","scene":"bad","speaker":"narrator","pause":0.55},
+{"text":"bài toán này phức tạp hơn phép nhân rất nhiều.","scene":"math","speaker":"narrator","pause":1.3}
+]

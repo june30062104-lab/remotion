@@ -1,0 +1,30 @@
+name: Generate Vietnamese narration for Last Two People
+on:
+  push:
+    branches: [video/last-two-people]
+    paths:
+      - exports/last-two-people/lines.json
+      - exports/last-two-people/synthesize.py
+      - .github/workflows/last-two-people-voice.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          sparse-checkout: exports/last-two-people
+      - name: Install voice client
+        run: python -m pip install edge-tts==7.2.7
+      - name: Generate narration
+        run: python exports/last-two-people/synthesize.py
+      - name: Publish narration asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create last-two-people-voice-v1 --target "$GITHUB_SHA" --title "Last Two People — narration assets" --notes "Generated Vietnamese narration for the requested animated video." exports/last-two-people/last-two-people-voice.zip
