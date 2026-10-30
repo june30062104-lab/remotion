@@ -1,0 +1,35 @@
+{
+  "status": "ready",
+  "assets": [
+    {
+      "name": "last-two-people-30s-1080p.mp4",
+      "sha256": "ddb19ef3a78b5b735fbc8dc8731252d4d0b5d990d920ab0e1361d9ec035477e9",
+      "bytes": 29486528
+    },
+    {
+      "name": "last-two-people-30s-codex-source.zip",
+      "sha256": "2903bad981ad3c14aa173693251ffdf7cdb89babf0cc6ee790d2bb9b14a0f22b",
+      "bytes": 9603267
+    },
+    {
+      "name": "preview-action.mp4",
+      "sha256": "57c433f0744a4217d338f649729e811e5897e8b71133918e93ade630a180e3aa",
+      "bytes": 1600806
+    },
+    {
+      "name": "storyboard.png",
+      "sha256": "fc4744e52f03448eb6d5935c41ec93a906c84159fb22d971404793d44d8988a5",
+      "bytes": 1957953
+    },
+    {
+      "name": "final-contact-sheet.jpg",
+      "sha256": "8ea9a569d97b96c34c49049af3617529b3ff5d0a1c805e234b0d5112817eaab3",
+      "bytes": 115170
+    },
+    {
+      "name": "validation.json",
+      "sha256": "d4fc46c2a7eae872bb6795d5851464d1e62fb61660ff8f0b551de6fe98455c02",
+      "bytes": 485
+    }
+  ]
+}

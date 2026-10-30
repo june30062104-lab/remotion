@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "duration": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": "24/1",
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "full_decode": "passed",
+  "bytes": 29486528,
+  "frames": 720,
+  "shots": 18,
+  "script_segments": 8,
+  "captions_overlay": false,
+  "subtitle_streams": 0,
+  "music": "original playful124BPM",
+  "voice": "Edge TTS Vietnamese NamMinh/HoaiMy,+18%rate,+12Hzpitch;additional1.04x",
+  "sfx_cues": 19,
+  "voice_boundary_text_match": "passed"
+}
