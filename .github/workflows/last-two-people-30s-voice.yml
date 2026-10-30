@@ -1,0 +1,35 @@
+name: Generate Vietnamese narration for Last Two People 30s
+on:
+  push:
+    branches: [video/last-two-people]
+    paths:
+      - exports/last-two-people-30s/lines.json
+      - exports/last-two-people-30s/synthesize.py
+      - .github/workflows/last-two-people-30s-voice.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          sparse-checkout: exports/last-two-people-30s
+      - name: Install voice client
+        run: python -m pip install edge-tts==7.3.1
+      - name: Generate narration
+        run: python exports/last-two-people-30s/synthesize.py > exports/last-two-people-30s/voice.log 2>&1
+      - name: Publish narration asset
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release view last-two-people-30s-voice-v1 >/dev/null 2>&1 || gh release create last-two-people-30s-voice-v1 --target "$GITHUB_SHA" --title "Last Two People 30s — narration assets" --notes "Generated Vietnamese narration for the requested animated video."
+          gh release upload last-two-people-30s-voice-v1 exports/last-two-people-30s/voice.log --clobber
+          if [ -f exports/last-two-people-30s/last-two-people-30s-voice.zip ]; then
+            gh release upload last-two-people-30s-voice-v1 exports/last-two-people-30s/last-two-people-30s-voice.zip --clobber
+          fi
